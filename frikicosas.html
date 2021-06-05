@@ -1,0 +1,71 @@
+<DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="utf-8">
+ <title>Códigos</title>
+
+
+<style>
+
+.boton{
+  background-color: #ff3377;
+  height:50px;
+  width:50px;
+}
+.pulsado1{
+  background-color:#00ff00;
+}
+.pulsado2{
+  background-color:#00ffff;
+}
+</style>
+</head>
+
+<body>
+  <h1>Esta es la parte de otras cosas</h1>
+  <h2>aquí habrá acceso a artículos y demás de cosas que me gustan.</h2>
+<script>
+  let turno=0;
+  let tablero=[0,0,0,0,0,0,0,0,0];
+  function pulsa(id){
+    if (tablero[id]!=0)return;
+    let jug = turno%2+1;     
+    let clase=(jug==1)?'pulsado1':'pulsado2';
+    document.getElementById(id.toString()).classList.add(clase);
+    turno++;
+    tablero[id]=jug;
+  let lineas= [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+  for(let i=0; i<lineas.length;i++){
+    let [j, k, l] = lineas[i];
+console.log(j);
+    if((tablero[j]!=0)&&(tablero[j]==tablero[k])&&(tablero[k]==tablero[l])) {
+        alert("ha ganado " + tablero[j]);
+	
+    }
+    
+    }
+   }
+ </script>
+  <p>
+    Pero primero un tres en raya:<br>
+   <button id='0' onclick="pulsa(0)"  class="boton"></button>
+   <button id='1' onclick="pulsa(1)"  class="boton"></button>
+   <button id='2' onclick="pulsa(2)"  class="boton"></button>
+   <br>
+   <button id='3' onclick="pulsa(3)"  class="boton"></button>
+   <button id='4' onclick="pulsa(4)"  class="boton"></button>
+   <button id='5' onclick="pulsa(5)"  class="boton"></button>
+   <br>
+   <button id='6' onclick="pulsa(6)"  class="boton"></button>
+   <button id='7' onclick="pulsa(7)"  class="boton"></button>
+   <button id='8' onclick="pulsa(8)"  class="boton"></button>
+  </p>
+
+
+  <p><a href = página_inicial.html>Vuelve al inicio</a></p>
+ 
+</body>
+<!--para poner gifs se abre nuevo parrafo, se pone src= y la direccion del gif o foto entre comillas-->
+
+</html>
