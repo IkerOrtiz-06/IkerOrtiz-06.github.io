@@ -21,7 +21,7 @@ function montes(x){
     }
 }
 function setup() {
-  createCanvas(1000, 500);
+  createCanvas(500, 450);
   rectMode(CENTER);
     background(0,255,255);
     x = width/2;
@@ -45,7 +45,8 @@ function draw() {
 }
 
 function keyPressed(){
-        if (keyCode === RIGHT){
+  console.log(keyCode, key)
+        if (keyCode === RIGHT_ARROW){
             x-=0.1
             xmont -= 2
             xnub -= 0.5
@@ -57,7 +58,7 @@ function keyPressed(){
                 xnub += 100    
             }
         }
-        else if (keyCode === LEFT){
+        else if (keyCode === LEFT_ARROW){
             x+=0.1
             xmont += 2
             xnub += 0.5
